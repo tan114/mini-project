@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Multiple Players</title>
+        <style>
+            body{
+            background-image: url('img/1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            }
+            h2{
+                text-align: center;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="game-javascript-localstorage.html">
+            <h2>Create Your User ID</h2>
+            <h2>Player’s Name&nbsp;:<input type="text" id="1pname" size='100' height="100%"></h2>
+            <h2>Player’s E-mail:<input type="text" name="1pemail" size='100'></h2>
+            <h2>Player’s Age&nbsp;&nbsp;&nbsp;:<input type="text" name="1page" size='100'></h2>
+            <h2><input type="radio" name="gender" value="male">Male</br></h2>
+            <h2><input type="radio"  name="gender" value="female">Female</h2>  
+            <br>
+            <br>
+            <h2>Player’s Name&nbsp;:<input type="text" id="2pname" size='100' height="100%"></h2>
+            <h2>Player’s E-mail:<input type="text" name="2pemail" size='100'></h2>
+            <h2>Player’s Age&nbsp;&nbsp;&nbsp;:<input type="text" name="2page" size='100'></h2>
+            <h2><input type="radio" name="gender" value="male">Male</br></h2>
+            <h2><input type="radio"  name="gender" value="female">Female</h2> 
+            <br>
+            <br>
+            <h4 align='center'><a href="2pgame.html" target="_blank"><input type='button' value="Submit" onclick="namevalue()"></a></h4>
+            <h4 align='center'><a href="2.html" target="_blank"><input type="reset" value="Reset"></a></h4>
+        </form>
+        <script>
+            function namevalue(){
+                var playername=document.getElementById('1pname').value;
+                var playersname=document.getElementById('2pname').value;
+                localStorage.setItem("textvalue",playername);
+                localStorage.setItem("textvalue1",playersname);
+                return false;
+            }
+        </script>
+    </body>
+</html>

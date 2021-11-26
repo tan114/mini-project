@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Guess(Single)</title>    
+        <style>
+            body {
+            background-image: url('img/1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            text-align: center;
+            color: white;
+            font-size: large;
+            }
+        </style>
+    </head>
+    <body>
+        Welcome <span id='getname'></span><br><br>
+        Please Input Your Number:<br><br>(The number between 0~100)
+        <input type='number' name='num1' id='num1'>  
+        <br><br><br>
+        <button onclick="guess()" id="submit">Submit</button> 
+        <a href="1pgame.html"><input  type="reset" value="reset"></a>
+        <p id="result1"></p>
+
+        <script>
+            document.getElementById("getname").innerHTML=localStorage.getItem("textvalue");
+                       
+            var count=0;
+            var result;
+            var ans = parseInt(Math.random()*100);
+
+            function guess(){
+                var num1 = document.getElementById('num1').value;
+                if (num1 < 0 || num1 > 100){
+                    alert("Please input number between 0~100");
+                }else if (ans == num1){
+                    result='Congratulations, you got it!! The Number is ' + ans +' and You Guessed '+ count + ' Times.';
+                }else if (ans > num1 ){
+                    result='The number is bigger than ('+ num1 + ') ';
+                }else if (ans < num1 ){
+                    result='The number is smaller than ('+ num1 + ')';
+                }
+                count++;
+                document.getElementById('result1').innerHTML=result; 
+            }
+        </script>
+    </body>
+</html>
